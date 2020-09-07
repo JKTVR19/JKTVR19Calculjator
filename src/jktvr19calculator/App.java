@@ -18,7 +18,7 @@ public class App {
         
     public void  run() {
         System.out.println("-------Calculator----------");
-       do{
+            do{
                 System.out.println("insert first number: ");
                 Scanner scanner = new Scanner(System.in);/*считываем с вхлдящего потока*/
                 double number1 = scanner.nextDouble();
@@ -33,30 +33,35 @@ public class App {
                 String znak = scanner.nextLine();
 
                 System.out.println("Result: ");
-                if ("+".equals(znak)) {
+                switch (znak) {
+                case "+":
                     System.out.println(number1+number2);
-                }
-                if ("-".equals(znak)) {
+                    break;
+                case "-":
                     System.out.println(number1-number2);
-                }
-                if ("*".equals(znak)) {
+                    break;
+                case "*":
                     System.out.println(number1*number2);
-                }
-                        if ("/".equals(znak)) {
-                            if(number2 == 0) {
-                                System.out.println("на ноль делить нельзя!");
-                            }
-                        System.out.println(number1/number2);
-                        }
+                    break;
+                case "/":
+                    if(number2 == 0) {
+                        System.out.println("на ноль делить нельзя!");
+                    }
+                    System.out.println(number1/number2);
+                    break;
+                default:
+                    System.out.println("---выберите перечисленную операцию---");
+                    break;
+            }
                         
-       }
+       
                 System.out.println("для продолжения нажмите\"y\", для выхода любую другую");
                         repeat = scanner.nextLine();
        
-       }while(repeat.equals("y"));
+            }while(repeat.equals("y"));
                     /*System.out.println(number1 + number2);*/
                     System.out.println("---finish---");
-            }
+                        }
 
-        
+                }
     
